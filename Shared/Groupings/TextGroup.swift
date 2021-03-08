@@ -57,7 +57,12 @@ struct TextGroup: View {
             )
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct TextGroup_Previews: PreviewProvider {

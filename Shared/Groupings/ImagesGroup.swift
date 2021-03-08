@@ -46,7 +46,12 @@ struct ImagesGroup: View {
                 }
             )
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct ImagesGroup_Previews: PreviewProvider {

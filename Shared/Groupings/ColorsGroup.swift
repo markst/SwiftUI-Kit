@@ -54,7 +54,12 @@ struct Swatch: View {
             Text(color.name)
             Spacer()
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 
 }
 

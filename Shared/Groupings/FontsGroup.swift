@@ -71,7 +71,12 @@ struct FontsGroup: View {
                     .font(.footnote)
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct FontsGroup_Previews: PreviewProvider {

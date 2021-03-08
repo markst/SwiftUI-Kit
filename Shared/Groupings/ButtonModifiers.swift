@@ -119,7 +119,12 @@ struct ButtonModifiers: View {
                 }
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     private func getParams() -> ButtonStyleParams {
         return ButtonStyleParams(scale: scale,
@@ -157,7 +162,12 @@ struct TestButton: ViewModifier {
             .padding()
             .foregroundColor(textColor)
         //			.colorInvert()
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 extension Image {

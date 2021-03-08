@@ -52,7 +52,12 @@ struct IndicatorsGroup: View {
             )
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct IndicatorsGroup_Previews: PreviewProvider {

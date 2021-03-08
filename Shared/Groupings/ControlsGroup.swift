@@ -93,7 +93,12 @@ struct ControlsGroup: View {
             }
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 enum Flavor: String, CaseIterable, Identifiable, CustomStringConvertible {

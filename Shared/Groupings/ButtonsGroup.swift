@@ -174,7 +174,12 @@ struct ButtonsGroup: View {
             )
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct ButtonsGroup_Previews: PreviewProvider {

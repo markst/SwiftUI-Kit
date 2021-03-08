@@ -23,7 +23,12 @@ struct GesturesGroup: View {
                 LongPressGestureBlock()
             }
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct TapGestureBlock : View {
@@ -39,7 +44,13 @@ struct TapGestureBlock : View {
             }
         }
         .onTapGesture(count: count, perform: tapped)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
+
     func tapped() {
         self.count += 1
     }
@@ -84,7 +95,12 @@ struct LongPressGestureBlock: View {
         Text("LongPress Gesture")
             .foregroundColor(textColor())
             .gesture(longPress)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
     
     func textColor()->Color{
         return self.isDetectingLongPress ? Color.red :

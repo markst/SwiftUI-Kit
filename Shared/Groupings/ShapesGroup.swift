@@ -82,7 +82,12 @@ struct ShapesGroup: View {
                 }
             )
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct ShapesGroup_Previews: PreviewProvider {

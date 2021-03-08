@@ -22,7 +22,12 @@ struct MapGroup: View {
                     .frame(minWidth: 200, idealWidth: 500, maxWidth: .infinity, minHeight: 200, idealHeight: 500, maxHeight: .infinity)
             }
         )
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 
 }
 

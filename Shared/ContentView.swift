@@ -43,7 +43,12 @@ struct ContentView: View {
             #endif
         }
         .accentColor(.accentColor)
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct Grouping<Content: View>: View {
@@ -59,7 +64,12 @@ struct Grouping<Content: View>: View {
             Label(title, systemImage: icon)
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct ContentView_Previews: PreviewProvider {

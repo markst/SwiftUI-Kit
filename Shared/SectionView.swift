@@ -33,7 +33,12 @@ struct SectionView<Content: View>: View {
             }
             #endif
         }
+        .eraseToAnyView()
     }
+
+    #if DEBUG
+    @ObservedObject var iO = injectionObserver
+    #endif
 }
 
 struct SectionView_Previews: PreviewProvider {
