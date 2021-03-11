@@ -60,6 +60,9 @@
 		97E5A1DC24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1DD24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1E024E1A71300246EAD /* SwiftUI Kit WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 97E5A1CF24E1A71200246EAD /* SwiftUI Kit WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BBAA25D325F93920007466A9 /* HotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA25D225F93920007466A9 /* HotSwiftUI */; };
+		BBAA262525FA215C007466A9 /* SwiftTrace in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA262425FA215C007466A9 /* SwiftTrace */; };
+		BBAA262625FA215C007466A9 /* SwiftTrace in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBAA262425FA215C007466A9 /* SwiftTrace */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BBFD772A25F6206000AAECD3 /* HotReloading in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD772925F6206000AAECD3 /* HotReloading */; };
 		BBFD772B25F6206000AAECD3 /* HotReloading in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBFD772925F6206000AAECD3 /* HotReloading */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F95A4E1F24B9936000697538 /* SwiftUI_KitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64524B90DD9005C2F44 /* SwiftUI_KitApp.swift */; };
@@ -137,12 +140,23 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBAA25F925F93E83007466A9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBFD772C25F6206000AAECD3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BBAA262625FA215C007466A9 /* SwiftTrace in Embed Frameworks */,
 				BBFD772B25F6206000AAECD3 /* HotReloading in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -209,6 +223,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAA262525FA215C007466A9 /* SwiftTrace in Frameworks */,
+				BBAA25D325F93920007466A9 /* HotSwiftUI in Frameworks */,
 				BBFD772A25F6206000AAECD3 /* HotReloading in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +454,8 @@
 			name = "SwiftUI Kit iOS";
 			packageProductDependencies = (
 				BBFD772925F6206000AAECD3 /* HotReloading */,
+				BBAA25D225F93920007466A9 /* HotSwiftUI */,
+				BBAA262425FA215C007466A9 /* SwiftTrace */,
 			);
 			productName = "SwiftUI Kit";
 			productReference = 861EC64224B90DD9005C2F44 /* SwiftUI Kit iOS.app */;
@@ -450,12 +468,16 @@
 				97E5A1CB24E1A71200246EAD /* Sources */,
 				97E5A1CC24E1A71200246EAD /* Frameworks */,
 				97E5A1CD24E1A71200246EAD /* Resources */,
+				BBAA25EA25F93C31007466A9 /* ShellScript */,
+				BBAA25F925F93E83007466A9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "SwiftUI Kit WidgetExtension";
+			packageProductDependencies = (
+			);
 			productName = "SwiftUI Kit WidgetExtension";
 			productReference = 97E5A1CF24E1A71200246EAD /* SwiftUI Kit WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -518,6 +540,8 @@
 			mainGroup = 861EC63924B90DD9005C2F44;
 			packageReferences = (
 				BBFD772825F6206000AAECD3 /* XCRemoteSwiftPackageReference "HotReloading" */,
+				BBAA25D125F93920007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
+				BBAA262325FA215C007466A9 /* XCRemoteSwiftPackageReference "SwiftTrace" */,
 			);
 			productRefGroup = 861EC64324B90DD9005C2F44 /* Products */;
 			projectDirPath = "";
@@ -584,6 +608,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BBAA25EA25F93C31007466A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    #$SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\n    ~/Developer/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    #\"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\n    ~/Developer/HotReloading/fix_previews.sh\nfi\n";
+		};
 		BBFD772D25F6208200AAECD3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,7 +640,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    $SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    \"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    $SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    ls || \"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1241,6 +1282,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BBAA25D125F93920007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnno1962/HotSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		BBAA262325FA215C007466A9 /* XCRemoteSwiftPackageReference "SwiftTrace" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnno1962/SwiftTrace";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.2;
+			};
+		};
 		BBFD772825F6206000AAECD3 /* XCRemoteSwiftPackageReference "HotReloading" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/johnno1962/HotReloading";
@@ -1252,6 +1309,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BBAA25D225F93920007466A9 /* HotSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBAA25D125F93920007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */;
+			productName = HotSwiftUI;
+		};
+		BBAA262425FA215C007466A9 /* SwiftTrace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBAA262325FA215C007466A9 /* XCRemoteSwiftPackageReference "SwiftTrace" */;
+			productName = SwiftTrace;
+		};
 		BBFD772925F6206000AAECD3 /* HotReloading */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBFD772825F6206000AAECD3 /* XCRemoteSwiftPackageReference "HotReloading" */;
