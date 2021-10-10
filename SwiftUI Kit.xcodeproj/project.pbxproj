@@ -60,11 +60,9 @@
 		97E5A1DC24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1DD24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1E024E1A71300246EAD /* SwiftUI Kit WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 97E5A1CF24E1A71200246EAD /* SwiftUI Kit WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BBAA25D325F93920007466A9 /* HotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA25D225F93920007466A9 /* HotSwiftUI */; };
-		BBAA262525FA215C007466A9 /* SwiftTrace in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA262425FA215C007466A9 /* SwiftTrace */; };
-		BBAA262625FA215C007466A9 /* SwiftTrace in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBAA262425FA215C007466A9 /* SwiftTrace */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		BBFD772A25F6206000AAECD3 /* HotReloading in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD772925F6206000AAECD3 /* HotReloading */; };
-		BBFD772B25F6206000AAECD3 /* HotReloading in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBFD772925F6206000AAECD3 /* HotReloading */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		BBAA266825FA2A74007466A9 /* HotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA266725FA2A74007466A9 /* HotSwiftUI */; };
+		BBAA26BC25FA6B18007466A9 /* HotReloading in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA26BB25FA6B18007466A9 /* HotReloading */; };
+		BBAA26BD25FA6B18007466A9 /* HotReloading in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBAA26BB25FA6B18007466A9 /* HotReloading */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F95A4E1F24B9936000697538 /* SwiftUI_KitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64524B90DD9005C2F44 /* SwiftUI_KitApp.swift */; };
 		F95A4E2024B9937800697538 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64724B90DD9005C2F44 /* ContentView.swift */; };
 		F95A4E2124B9938100697538 /* ShapesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC66024B912C9005C2F44 /* ShapesGroup.swift */; };
@@ -150,14 +148,23 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBAA268625FA32DB007466A9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBFD772C25F6206000AAECD3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BBAA262625FA215C007466A9 /* SwiftTrace in Embed Frameworks */,
-				BBFD772B25F6206000AAECD3 /* HotReloading in Embed Frameworks */,
+				BBAA26BD25FA6B18007466A9 /* HotReloading in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,9 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBAA262525FA215C007466A9 /* SwiftTrace in Frameworks */,
-				BBAA25D325F93920007466A9 /* HotSwiftUI in Frameworks */,
-				BBFD772A25F6206000AAECD3 /* HotReloading in Frameworks */,
+				BBAA26BC25FA6B18007466A9 /* HotReloading in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAA266825FA2A74007466A9 /* HotSwiftUI in Frameworks */,
 				97E5A1D424E1A71200246EAD /* SwiftUI.framework in Frameworks */,
 				97E5A1D224E1A71200246EAD /* WidgetKit.framework in Frameworks */,
 			);
@@ -453,9 +459,7 @@
 			);
 			name = "SwiftUI Kit iOS";
 			packageProductDependencies = (
-				BBFD772925F6206000AAECD3 /* HotReloading */,
-				BBAA25D225F93920007466A9 /* HotSwiftUI */,
-				BBAA262425FA215C007466A9 /* SwiftTrace */,
+				BBAA26BB25FA6B18007466A9 /* HotReloading */,
 			);
 			productName = "SwiftUI Kit";
 			productReference = 861EC64224B90DD9005C2F44 /* SwiftUI Kit iOS.app */;
@@ -477,6 +481,7 @@
 			);
 			name = "SwiftUI Kit WidgetExtension";
 			packageProductDependencies = (
+				BBAA266725FA2A74007466A9 /* HotSwiftUI */,
 			);
 			productName = "SwiftUI Kit WidgetExtension";
 			productReference = 97E5A1CF24E1A71200246EAD /* SwiftUI Kit WidgetExtension.appex */;
@@ -489,12 +494,16 @@
 				F95A4E0B24B9932000697538 /* Sources */,
 				F95A4E0C24B9932000697538 /* Frameworks */,
 				F95A4E0D24B9932000697538 /* Resources */,
+				BBAA268625FA32DB007466A9 /* Embed Frameworks */,
+				BBAA268A25FA32F8007466A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "SwiftUI Kit Mac";
+			packageProductDependencies = (
+			);
 			productName = "SwiftUI Kit Mac";
 			productReference = F95A4E0F24B9932000697538 /* SwiftUI Kit Mac.app */;
 			productType = "com.apple.product-type.application";
@@ -539,9 +548,8 @@
 			);
 			mainGroup = 861EC63924B90DD9005C2F44;
 			packageReferences = (
-				BBFD772825F6206000AAECD3 /* XCRemoteSwiftPackageReference "HotReloading" */,
-				BBAA25D125F93920007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
-				BBAA262325FA215C007466A9 /* XCRemoteSwiftPackageReference "SwiftTrace" */,
+				BBAA266625FA2A74007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
+				BBAA26BA25FA6B18007466A9 /* XCRemoteSwiftPackageReference "HotReloading" */,
 			);
 			productRefGroup = 861EC64324B90DD9005C2F44 /* Products */;
 			projectDirPath = "";
@@ -625,6 +633,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    #$SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\n    ~/Developer/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    #\"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\n    ~/Developer/HotReloading/fix_previews.sh\nfi\n";
 		};
+		BBAA268A25FA32F8007466A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    $SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\n    #~/Developer/HotReloading/start_daemon.sh\n#elif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n #   \"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\nfi\n";
+		};
 		BBFD772D25F6208200AAECD3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -640,7 +665,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    $SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    ls || \"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    $SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\n    #~/Developer/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    \"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1282,46 +1307,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BBAA25D125F93920007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */ = {
+		BBAA266625FA2A74007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/johnno1962/HotSwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
+				minimumVersion = 1.1.2;
 			};
 		};
-		BBAA262325FA215C007466A9 /* XCRemoteSwiftPackageReference "SwiftTrace" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/johnno1962/SwiftTrace";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.2;
-			};
-		};
-		BBFD772825F6206000AAECD3 /* XCRemoteSwiftPackageReference "HotReloading" */ = {
+		BBAA26BA25FA6B18007466A9 /* XCRemoteSwiftPackageReference "HotReloading" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/johnno1962/HotReloading";
 			requirement = {
-				kind = exactVersion;
-				version = 1.3.3;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.9;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BBAA25D225F93920007466A9 /* HotSwiftUI */ = {
+		BBAA266725FA2A74007466A9 /* HotSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BBAA25D125F93920007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */;
+			package = BBAA266625FA2A74007466A9 /* XCRemoteSwiftPackageReference "HotSwiftUI" */;
 			productName = HotSwiftUI;
 		};
-		BBAA262425FA215C007466A9 /* SwiftTrace */ = {
+		BBAA26BB25FA6B18007466A9 /* HotReloading */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BBAA262325FA215C007466A9 /* XCRemoteSwiftPackageReference "SwiftTrace" */;
-			productName = SwiftTrace;
-		};
-		BBFD772925F6206000AAECD3 /* HotReloading */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD772825F6206000AAECD3 /* XCRemoteSwiftPackageReference "HotReloading" */;
+			package = BBAA26BA25FA6B18007466A9 /* XCRemoteSwiftPackageReference "HotReloading" */;
 			productName = HotReloading;
 		};
 /* End XCSwiftPackageProductDependency section */
