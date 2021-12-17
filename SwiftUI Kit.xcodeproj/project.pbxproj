@@ -1246,7 +1246,7 @@
 			repositoryURL = "https://github.com/johnno1962/HotReloading";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 2.1.9;
+				minimumVersion = 2.1.19;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
