@@ -61,7 +61,6 @@
 		97E5A1DD24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1E024E1A71300246EAD /* SwiftUI Kit WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 97E5A1CF24E1A71200246EAD /* SwiftUI Kit WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BBFD772A25F6206000AAECD3 /* HotReloading in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD772925F6206000AAECD3 /* HotReloading */; };
-		BBFD772B25F6206000AAECD3 /* HotReloading in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BBFD772925F6206000AAECD3 /* HotReloading */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F95A4E1F24B9936000697538 /* SwiftUI_KitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64524B90DD9005C2F44 /* SwiftUI_KitApp.swift */; };
 		F95A4E2024B9937800697538 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64724B90DD9005C2F44 /* ContentView.swift */; };
 		F95A4E2124B9938100697538 /* ShapesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC66024B912C9005C2F44 /* ShapesGroup.swift */; };
@@ -143,7 +142,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BBFD772B25F6206000AAECD3 /* HotReloading in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1245,8 +1243,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/johnno1962/HotReloading";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 2.1.19;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
