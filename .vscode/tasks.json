@@ -1,0 +1,44 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "xcodegen",
+			"type": "shell",
+			"command": "todo: xcodegen",
+		},
+		{
+			"label": "xcodebuild",
+			"type": "process",
+			"command": "xcodebuild",
+			"args": [
+				"-scheme", "SwiftUI Kit iOS",
+				"-configuration", "Debug", 
+				"-sdk", "${command:ios-debug.targetSdk}",
+				"-clonedSourcePackagesDirPath", "${workspaceFolder}/build",
+				"-derivedDataPath", "${workspaceFolder}/build",
+				"-allowProvisioningUpdates",
+				"ARCHS=arm64 ONLY_ACTIVE_ARCH=NO"				
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "start_daemon",
+			"type": "shell",
+			"command": "${workspaceFolder}/build/checkouts/HotReloading/start_daemon.sh",
+			"isBackground": true,
+		},
+		{
+			"label": "Build",
+			"dependsOn": [
+				"xcodegen",
+				"xcodebuild",
+				"start_daemon",
+			]
+		}
+	]
+}
