@@ -329,7 +329,6 @@
 				2D8F831024BA011900E90F0B /* Embed Watch Content */,
 				97E5A1E124E1A71300246EAD /* Embed App Extensions */,
 				BBFD772C25F6206000AAECD3 /* Embed Frameworks */,
-				BBFD772D25F6208200AAECD3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -459,26 +458,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BBFD772D25F6208200AAECD3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -d $SYMROOT/../../SourcePackages ]; then\n    $SYMROOT/../../SourcePackages/checkouts/HotReloading/start_daemon.sh\nelif [ -d \"$SYMROOT\"/../../../../../SourcePackages ]; then\n    \"$SYMROOT\"/../../../../../SourcePackages/checkouts/HotReloading/fix_previews.sh\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DF3309C24BAA8B80034C8D0 /* Sources */ = {
